@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 //   create React components
 const App = () => {                            // functions base component
   const btnText = 'Click me';
-  const labelText = 'Name :';
+  const labelText = 'Name: ';
   return (                                         // convection with multi lines    
     <div>
       <label htmlFor="name" className='label'>{labelText}</label>
