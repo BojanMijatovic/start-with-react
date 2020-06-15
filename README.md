@@ -4,7 +4,7 @@
 
 <!-- first Steps with React -->
 
-create-react-app  class-based-components
+create-react-app class-based-components
 
 start react app -npm start
 stop react app - control + c
@@ -49,3 +49,10 @@ child component
   <!-- <a href="/" className="avatar">
         <img alt="avatar" src={props.avatarImg} />
       </a> -->
+
+use geoLocation
+
+<!--   window.navigator.geolocation.getCurrentPosition(
+    (position) => console.log(position),
+    (err) => console.log(err)
+  ); -->
