@@ -10,7 +10,9 @@ class App extends React.Component {
     };
 
     window.navigator.geolocation.getCurrentPosition(
-      (position) => console.log(position),
+      position => {
+        this.setState({ lat: position.coords.latitude })
+      },
       (err) => console.log(err)
     );
 
