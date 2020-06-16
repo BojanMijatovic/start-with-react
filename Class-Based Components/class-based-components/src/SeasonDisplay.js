@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const SeasonDisplay = () => {
+const SeasonDisplay = (props) => {
+  console.log(props);
+
   return (
-    <div>Season Display</div>
+    <div>Season Display {props.lat}</div>
   )
 }
 
