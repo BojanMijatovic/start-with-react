@@ -1,6 +1,5 @@
 import '../src/style/SeasonDisplay.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 
 const seasonConfig = {
@@ -14,7 +13,6 @@ const seasonConfig = {
   }
 }
 
-
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
     return lat > 0 ? 'summer' : 'winter';
@@ -23,11 +21,8 @@ const getSeason = (lat, month) => {
   }
 }
 
-
-
 const SeasonDisplay = (props) => {
   const season = getSeason(props.lat, new Date().getMonth());
-
   const { text, iconName } = seasonConfig[season];   // destructing obj seasonConfig
 
   return (
