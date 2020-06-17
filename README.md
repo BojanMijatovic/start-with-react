@@ -56,3 +56,13 @@ use geoLocation
     (position) => console.log(position),
     (err) => console.log(err)
   ); -->
+
+Handling User Input with Forms and Events
+
+state = {
+term: '',  
+}
+
+create state and add value from an anonymous function with e.target.value
+update term property with setState
+onChange={(e) => this.setState({ term: e.target.value })
