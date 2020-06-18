@@ -4,11 +4,12 @@ import MainContent from './components/MainContent'
 
 class App extends React.Component {
 
+
   render() {
     return (
       <div>
         <Header />
-        <MainContent />
+        <MainContent subtitle='new lorem' />
       </div>
     )
   };
