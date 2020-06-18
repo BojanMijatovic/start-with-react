@@ -7,11 +7,15 @@ class Header extends React.Component {
     name: 'New Header',
   }
 
+  textValue(inputValue) {
+    console.log(inputValue);
+  }
+
 
   render() {
     return (
       <div>{this.state.name}
-        <SearchInput />
+        <SearchInput test={this.textValue} />
       </div>
     )
   }
