@@ -1,9 +1,5 @@
 import React from 'react';
-
-
 class SearchInput extends React.Component {
-
-
   state = {
     inputValue: ''
   }
@@ -14,8 +10,6 @@ class SearchInput extends React.Component {
   }
 
   render() {
-
-
     return (
       <div>
         <form onSubmit={this.onFormS}>

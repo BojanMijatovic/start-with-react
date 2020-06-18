@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchInput from './SearchInput';
-
-
+import main from './style/main.css'
 class Header extends React.Component {
   state = {
     name: 'New Header',
@@ -11,10 +10,10 @@ class Header extends React.Component {
     console.log(inputValue);
   }
 
-
   render() {
     return (
-      <div>{this.state.name}
+      <div>
+        <h1 className='header'>{this.state.name}</h1>
         <SearchInput test={this.textValue} />
       </div>
     )
