@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header'
-
+import MainContent from './components/MainContent'
 
 class App extends React.Component {
 
@@ -8,6 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <MainContent />
       </div>
     )
   };
