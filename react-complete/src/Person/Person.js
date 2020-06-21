@@ -4,10 +4,13 @@ let randomNum = () => {
   return Math.floor(Math.random() * 50 + 1);
 }
 
-
-const Person = () => {
-  return <h2>Return Person with {randomNum()} years old</h2>
+const Person = (props) => {
+  return (
+    <div>
+      <h2>Person {props.name} with {randomNum()} years old</h2>
+      <h3>{props.children}</h3>
+    </div>
+  )
 }
-
 
 export default Person;
