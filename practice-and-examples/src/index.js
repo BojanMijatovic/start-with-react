@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import MaxCourse from './MaxCourse'
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<MaxCourse />, document.querySelector('#root'));
