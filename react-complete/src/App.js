@@ -51,13 +51,13 @@ class App extends React.Component {
         <p> Its really work </p>
         <button onClick={this.togglePersonHandler}>Show  Persons</button>
         {
-          // toggle show or hide div with ternary operator if its true
-          <div>
-            <Person name={this.state.persons[0].name} />
-            <Person name={this.state.persons[1].name} click={(e) => this.switchNameHandler('Name from anonymous')}>Hobbies : Learn Js and Learn React</Person>
-            <Person name={this.state.persons[2].name} changedName={this.inputValueHandler} />
-          </div>
-          //  if its false
+          this.state.showPersons ?  // toggle show or hide div with ternary operator if its true
+            <div>
+              <Person name={this.state.persons[0].name} />
+              <Person name={this.state.persons[1].name} click={(e) => this.switchNameHandler('Name from anonymous')}>Hobbies : Learn Js and Learn React</Person>
+              <Person name={this.state.persons[2].name} changedName={this.inputValueHandler} />
+            </div>
+            : null                                //  if its false
         }
       </div>
     );
