@@ -11,7 +11,8 @@ class App extends React.Component {
       name: 'Rex'
     }, {
       name: 'Steven'
-    }]
+    }],
+    showPersons: false
   }
 
   switchNameHandler = (newName) => {
@@ -38,16 +39,26 @@ class App extends React.Component {
     })
   }
 
+  togglePersonHandler = () => {
+    const doesShowPersons = this.state.showPersons;
+    this.setState({ showPersons: !doesShowPersons })
+  }
 
   render() {
     return (
       <div className="App">
         <h1>React App</h1>
         <p> Its really work </p>
-        <button onClick={this.switchNameHandler.bind(this, 'New name from bind')}>Switch Name</button>
-        <Person name={this.state.persons[0].name} />
-        <Person name={this.state.persons[1].name} click={(e) => this.switchNameHandler('Name from anonymous')}>Hobbies : Learn Js and Learn React</Person>
-        <Person name={this.state.persons[2].name} changedName={this.inputValueHandler} />
+        <button onClick={this.togglePersonHandler}>Show  Persons</button>
+        {
+          // toggle show or hide div with ternary operator if its true
+          <div>
+            <Person name={this.state.persons[0].name} />
+            <Person name={this.state.persons[1].name} click={(e) => this.switchNameHandler('Name from anonymous')}>Hobbies : Learn Js and Learn React</Person>
+            <Person name={this.state.persons[2].name} changedName={this.inputValueHandler} />
+          </div>
+          //  if its false
+        }
       </div>
     );
   }
