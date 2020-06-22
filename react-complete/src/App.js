@@ -21,15 +21,13 @@ class App extends React.Component {
   inputValueHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(person => person.id === id);
     const person = { ...this.state.persons[personIndex] };
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
 
     this.setState({
-      persons: [{
-        name: 'InputValue'
-      }, {
-        name: 'React'
-      }, {
-        name: event.target.value
-      }]
+      persons: persons
     })
   }
 
