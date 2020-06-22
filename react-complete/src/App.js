@@ -19,6 +19,9 @@ class App extends React.Component {
   }
 
   inputValueHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(person => person.id === id);
+    const person = { ...this.state.persons[personIndex] };
+
     this.setState({
       persons: [{
         name: 'InputValue'
