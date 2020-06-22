@@ -15,18 +15,6 @@ class App extends React.Component {
     showPersons: false
   }
 
-  switchNameHandler = (newName) => {
-    this.setState({
-      persons: [{
-        name: newName
-      }, {
-        name: 'React'
-      }, {
-        name: newName
-      }]
-    })
-  }
-
   inputValueHandler = (event) => {
     this.setState({
       persons: [{
@@ -44,21 +32,30 @@ class App extends React.Component {
     this.setState({ showPersons: !doesShowPersons })
   }
 
+  deletePersonHandler = (personIndex) => {
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1)
+    this.setState({ persons: persons })
+  }
+
   render() {
+    let persons = null;
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+          {this.state.persons.map((person, index) => {
+            return <Person name={person.name} deletePerson={() => this.deletePersonHandler(index)} />   // render single person with map 
+          })}
+        </div>
+      )
+    }
+
     return (
       <div className="App">
         <h1>React App</h1>
         <p> Its really work </p>
         <button onClick={this.togglePersonHandler}>Show  Persons</button>
-        {
-          this.state.showPersons ?  // toggle show or hide div with ternary operator if its true
-            <div>
-              <Person name={this.state.persons[0].name} />
-              <Person name={this.state.persons[1].name} click={(e) => this.switchNameHandler('Name from anonymous')}>Hobbies : Learn Js and Learn React</Person>
-              <Person name={this.state.persons[2].name} changedName={this.inputValueHandler} />
-            </div>
-            : null                                //  if its false
-        }
+        {persons}
       </div>
     );
   }
