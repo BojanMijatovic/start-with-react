@@ -6,16 +6,19 @@ class App extends React.Component {
 
   state = {
     persons: [{
-      name: 'Alex'
+      name: 'Alex',
+      id: '01'
     }, {
-      name: 'Rex'
+      name: 'Rex',
+      id: '012'
     }, {
-      name: 'Steven'
+      name: 'Steven',
+      id: '0123'
     }],
     showPersons: false
   }
 
-  inputValueHandler = (event) => {
+  inputValueHandler = (event, id) => {
     this.setState({
       persons: [{
         name: 'InputValue'
@@ -44,7 +47,11 @@ class App extends React.Component {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <Person name={person.name} deletePerson={() => this.deletePersonHandler(index)} />   // render single person with map 
+            return <Person
+              name={person.name} deletePerson={() => this.deletePersonHandler(index)}
+              key={person.id}
+              changedName={(event) => this.inputValueHandler(event, person.id)}
+            />   // render single person with map 
           })}
         </div>
       )
