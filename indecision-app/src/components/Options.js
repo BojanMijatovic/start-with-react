@@ -4,7 +4,7 @@ import Option from './Option';
 const Options = (props) => {
   return (
     <div>
-      <h3>We have {props.numOption} options here</h3>
+      <h3>We have {props.options} options here</h3>
       <Option />
     </div>
   )
