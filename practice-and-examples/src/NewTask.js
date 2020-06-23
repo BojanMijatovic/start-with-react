@@ -1,12 +1,10 @@
 import React from 'react';
 import ValidationComponent from './newTask/ValidationComponent';
 import CharComponent from './newTask/CharComponent';
-
 class NewTask extends React.Component {
   state = {
     charLength: ''
   }
-
 
   showLengthChar = (e) => {
     this.setState({ charLength: e.target.value })
@@ -19,9 +17,7 @@ class NewTask extends React.Component {
     this.setState({ charLength: updateText })
   }
 
-
   render() {
-
     const charList = this.state.charLength.split(' ').map((char, id) => {
       return <CharComponent character={char} key={id} clicked={() => this.removeSingleEl(id)} />
     })

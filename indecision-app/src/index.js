@@ -1,33 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from './components/Header';
+import Options from './components/Options';
 
 class IndecisionApp extends React.Component {
-
-  template = {
-    name: 'Indecision app',
-    options: []
+  state = {
+    title: 'Indecision app',
+    subtitle: 'Put your life ih the hands off computer',
+    options: ['option1', 'option2', 'option3']
   }
 
-  submitForm = (event) => {
-    event.preventDefault();
-    const option = event.target.elements.option.value;
-    if (option) {
-      this.template.options.push(option);
-      event.target.elements.option.value = '';
-      console.log(this.template.options);
-    }
-  }
 
   render() {
     return (
-      <div>{this.template.name}
-        <div>{this.template.options.length > 0 ? `Here is options: ${this.template.options}` : 'No options'}</div>
-        <form onSubmit={this.submitForm}>
-          <label>Input :</label>
-          <input type='text' name='option' />
-          <button>add option</button>
-        </form>
-        <p>{this.template.options.length}</p>
+      <div>
+        <Header title={this.state.title} subtitle={this.state.subtitle} />
+        <Options numOption={this.state.options.length} />
       </div>
     )
   }

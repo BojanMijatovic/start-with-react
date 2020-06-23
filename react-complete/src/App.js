@@ -3,7 +3,6 @@ import './App.css';
 import Person from '../src/Person/Person';
 
 class App extends React.Component {
-
   state = {
     persons: [{
       name: 'Alex',
@@ -25,7 +24,6 @@ class App extends React.Component {
 
     const persons = [...this.state.persons];
     persons[personIndex] = person;
-
     this.setState({
       persons: persons
     })
@@ -47,12 +45,12 @@ class App extends React.Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {
+          {this.state.persons.map((person, index) => {                            // render single person with map 
             return <Person
               name={person.name} deletePerson={() => this.deletePersonHandler(index)}
               key={person.id}
               changedName={(event) => this.inputValueHandler(event, person.id)}
-            />   // render single person with map 
+            />
           })}
         </div>
       )
