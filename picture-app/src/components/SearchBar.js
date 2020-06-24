@@ -1,5 +1,4 @@
 import React from 'react';
-
 class SearchBar extends React.Component {
   state = {
     term: '',
@@ -24,6 +23,5 @@ class SearchBar extends React.Component {
     );
   }
 }
-
 
 export default SearchBar;

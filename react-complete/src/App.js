@@ -21,7 +21,6 @@ class App extends React.Component {
     const personIndex = this.state.persons.findIndex(person => person.id === id);
     const person = { ...this.state.persons[personIndex] };
     person.name = event.target.value;
-
     const persons = [...this.state.persons];
     persons[personIndex] = person;
     this.setState({
@@ -56,10 +55,18 @@ class App extends React.Component {
       )
     }
 
+    const classes = [];                             // dynamically add classes to css
+    if (this.state.persons.length <= 2) {
+      classes.push('red')
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('bold')
+    }
+
     return (
       <div className="App">
         <h1>React App</h1>
-        <p> Its really work </p>
+        <p className={classes.join(' ')}> Its really work </p>
         <button onClick={this.togglePersonHandler}>Show  Persons</button>
         {persons}
       </div>
