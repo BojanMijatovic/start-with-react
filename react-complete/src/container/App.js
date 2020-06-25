@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons'
+
 
 class App extends React.Component {
   state = {
@@ -44,13 +45,11 @@ class App extends React.Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {                            // render single person with map 
-            return <Person
-              name={person.name} deletePerson={() => this.deletePersonHandler(index)}
-              key={person.id}
-              changedName={(event) => this.inputValueHandler(event, person.id)}
-            />
-          })}
+          <Persons
+            persons={this.state.persons}
+            deleted={this.deletePersonHandler}
+            changed={this.inputValueHandler}
+          />
         </div>
       )
     }
