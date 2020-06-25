@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 
 class App extends React.Component {
   state = {
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   addNewTodoItem = () => {
-    if (!this.state.todoItems.find(item => item.action === this.state.newTodoText)
+    if (!this.state.todoItems.find(item => item.action === this.state.newTodoText) //check is the same item in array
       || this.state.newTodoText.length === ''.trim()) {
       this.setState({
         todoItems: [...this.state.todoItems, { action: this.state.newTodoText, done: false }],  //add new todo
@@ -51,7 +51,6 @@ class App extends React.Component {
       </td>
     </tr>
   })
-
 
   render() {
     return (
