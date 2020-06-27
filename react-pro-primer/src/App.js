@@ -49,6 +49,18 @@ class App extends React.Component {
             <div className='col-3 bg-secondary text-white'> text lorem14</div>
           </div>
         </div>
+        <div className='container-fluid'>
+          <h3 className='bg-primary text-white text-center mt-4 p-0'>Form Control</h3>
+          <div className='form-group'>
+            <label>Name :</label>
+            <input className='form-control' type='text'></input>
+          </div>
+          <div className='form-group'>
+            <label>City:</label>
+            <input className='form-control' type='text'></input>
+          </div>
+          <div className='form-group'><button className='btn bg-primary text-white'>submit</button> </div>
+        </div>
       </div>
     )
   }
