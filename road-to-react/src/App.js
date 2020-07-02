@@ -4,45 +4,44 @@ import 'semantic-ui-css/semantic.min.css';
 class App extends Component {
 
   state = {
-    person: {
-      name: 'Alex',
-      lastName: 'Smith'
-    },
-    teacher: [
+    person: [
       {
-        title: 'Help to learn React',
-        classes: 125,
-        points: 0,
-        author: 'Jordan Fluke',
-        id: Math.random()
+        title: 'React',
+        url: 'https://facebook.github.io/react/',
+        author: 'Jordan Walker',
+        num_comments: 3,
+        points: 4,
+        objectID: 0,
       }
     ]
-
-
   }
 
+  onDismiss = (id) => {
+    const filterID = this.state.person.filter(p => p.objectID !== id);
+    this.setState({ person: filterID })
+  }
+
+
   render() {
-    const helloWorld = `Welcome to React road map`;
     return (
-      <div className='ui container'>
-        <h2 className='huge header ui center aligned container'>{helloWorld}</h2>
-        <h3>This is {this.state.person.name} {this.state.person.lastName}</h3>
-        <i className="rs flag"></i>
-        <p>Greets from Serbia</p>
-        {this.state.teacher.map((t) => {
-          return (
-            <div className="ui card" key={t.id}>
+      <div>
+        {this.state.person.map(p => {
+          return <div className='ui container' key={p.objectID}>
+            <div className="ui card">
               <div className="content">
-                <div className="header">{t.author}</div>
-                <div className="description">{t.title}</div>
+                <div className="header">{p.author}</div>
+                <div className="meta">Points :{p.points}</div>
               </div>
               <div className="extra content">
-                <i aria-hidden="true" className="user icon"></i>
-                 Num off students: {t.classes}</div>
+                <a href='/'>
+                  <i aria-hidden="true" className="user icon"></i>Num off comments{p.num_comments}</a>
+              </div>
             </div>
-          )
-        }
-        )}
+            <span>
+              <button onClick={() => this.onDismiss(p.objectID)}>Dismiss</button>
+            </span>
+          </div>
+        })}
       </div>
     )
   }
