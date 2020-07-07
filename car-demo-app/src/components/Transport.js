@@ -1,12 +1,12 @@
 import React from 'react';
-import faker from 'faker';
+
 
 const Transport = (props) => {
   return (
     <div className='ui grid'>
       <div className="ui card there column centered"  >
         <div className="image"  >
-          <img src={faker.image.transport()} alt='car' />
+          <img src={props.picture} alt='car' />
         </div>
         <div className="content"  >
           <a href='/http://localhost:3000/' className="header">{props.name}</a>
