@@ -4,7 +4,7 @@ import faker from 'faker';
 const Transport = (props) => {
   return (
     <div className='ui grid'>
-      <div className="ui card there   column"  >
+      <div className="ui card there column centered"  >
         <div className="image"  >
           <img src={faker.image.transport()} alt='car' />
         </div>
@@ -23,9 +23,7 @@ const Transport = (props) => {
         </div>
       </div>
     </div>
-
   )
 }
-
 
 export default Transport;
