@@ -1,36 +1,19 @@
 import React from 'react';
-import faker from 'faker';
-import Car from './components/Car';
+import Transport from './components/Transport';
 
 
 class App extends React.Component {
   state = {
-    title: 'Welcome to React Car demo app'
+    title: 'Welcome to React Transport demo app'
   }
 
   render() {
     return (
       <div className='ui container'>
-        <h1 className='ui header'>{this.state.title}</h1>
-        <div className="ui card"  >
-          <div className="image"  >
-            <img src={faker.image.transport()} alt='car' />
-          </div>
-          <div className="content"  >
-            <a href='/http://localhost:3000/' className="header">CHEVROLET</a>
-            <div className="meta" >
-              <span className="date" >year 2015</span>
-            </div>
-            <div className="description" >
-              manufacturer: GENERAL MOTORS
-          </div>
-          </div>
-          <div className="extra content" >
-            <a href='/http://localhost:3000/'>
-              <i className="user icon"></i>"engine":L4, 2.4L; DOHC; 16V</a>
-          </div>
-        </div>
-        <Car />
+        <h1 className='ui header centered'>{this.state.title}</h1>
+        <Transport name='Audi' year='2005' manufacturer='GENERAL MOTORS' engine='L4, 2.4L; DOHC; 16V' />
+        <Transport name='Volvo' year='2020' manufacturer='Volvo Sweden' engine='L8, 3.2L; DOHC; 8V' />
+        <Transport name='Mercedes' year='2010' manufacturer='Mercedes Benz' engine='L6, 3.6L; DOHC; 12V' />
       </div>
     )
   }
