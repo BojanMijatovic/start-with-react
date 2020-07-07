@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
-
 class App extends Component {
 
   state = {
@@ -16,11 +15,10 @@ class App extends Component {
     ]
   }
 
-  onDismiss = (id) => {
+  onDismiss = (id) => { // remove by filtered method
     const filterID = this.state.person.filter(p => p.objectID !== id);
     this.setState({ person: filterID })
   }
-
 
   render() {
     return (
@@ -38,7 +36,7 @@ class App extends Component {
               </div>
             </div>
             <span>
-              <button onClick={() => this.onDismiss(p.objectID)}>Dismiss</button>
+              <button onClick={() => this.onDismiss(p.objectID)} className='ui button'>Dismiss</button>
             </span>
           </div>
         })}

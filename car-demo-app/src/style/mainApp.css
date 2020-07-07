@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
+.car-app {
+  margin: 3rem;
+}
+
+.car-app label {
+  font-size: 2rem;
+}
+
+.car-app input {
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+.car-app button {
+  font-size: 1.6rem;
+  color: wheat;
+  background-color: teal;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+}
+
+
+.car-app button:hover,
+.car-app button:active {
+  background-color: wheat;
+  color: teal;
+}
