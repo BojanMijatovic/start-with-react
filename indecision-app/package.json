@@ -1,0 +1,12 @@
+{
+  "name": "learnReact",
+  "version": "1.0.0",
+  "description": "for practice and to learn React",
+  "main": "index.js",
+  "author": "Bojan Mijatovic",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
