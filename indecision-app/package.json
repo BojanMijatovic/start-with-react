@@ -6,6 +6,10 @@
   "author": "Bojan Mijatovic",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1"
   }
